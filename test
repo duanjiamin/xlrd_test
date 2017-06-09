@@ -1,0 +1,9 @@
+from xlrd import open_workbook
+from xlutils.copy import copy
+rb = open_workbook('E:\\xlrd_test\\test.xls')
+rs = rb.sheet_by_index(0)
+wb = copy(rb)
+ws = wb.get_sheet(0)
+str_temp='CT_T200-TTI-714-0_TQLSIJ_01-004_1.png\nCT_T200-TTI-714-0_TQLSIJ_01-004_2.png'
+ws.write(0, 0, str_temp)
+wb.save('E:\\xlrd_test\\test.xls')
